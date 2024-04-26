@@ -1,0 +1,1 @@
+import ${child_service_package}.${child_service_class};

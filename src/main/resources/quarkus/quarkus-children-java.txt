@@ -1,0 +1,29 @@
+package ${service_package};
+
+import io.twobeers.service.S3Service;
+import ${parent_service_package}.${parent_service_class};
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+${children_import}
+
+@ApplicationScoped
+public class ${service_class} {
+    @Inject
+    S3Service s3;
+
+    @Inject
+    ${parent_service_class} parentService;
+
+${children_inject}
+
+    public String runService() {
+        System.out.println("${service_package}.${service_class}, depend on ${parent_service_class}");
+        String content = s3.readFile();
+        System.out.println("S3 file content: " + content);
+${children_call}
+        System.out.println("S3 file content: " + content);
+
+        return content;
+    }
+
+}

@@ -1,0 +1,2 @@
+    @Inject
+    ${child_service_class} ${child_service};
