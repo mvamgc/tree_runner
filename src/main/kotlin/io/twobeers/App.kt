@@ -11,8 +11,8 @@ object App {
     }
 
     fun treeRunner() {
-        val nCreated = TreeRunner(".", Template.QUARKUS)
+        val nCreated = TreeRunner("./gen", "io.twobeers.service", Template.QUARKUS_CHILD)
             .generateNodes("", 3, 5)
-        println("Created files: $nCreated")
+        println("Created files: ${nCreated.first}")
     }
 }
